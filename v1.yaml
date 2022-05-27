@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sampleapp
-          image: docker.io/library/sampleapp:1
+          image: sampleapp:1
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
@@ -28,7 +28,7 @@ metadata:
   name: sampleapp-service
 spec:
   ports:
-  - port: 5000
+  - port: 8081
     protocol: TCP
     targetPort: 5000
   selector:
