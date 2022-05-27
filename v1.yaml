@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: sampleapp
-          image: sampleapp:1
+          image: docker.io/library/sampleapp:1
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
