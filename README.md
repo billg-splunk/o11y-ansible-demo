@@ -1,5 +1,9 @@
 # o11y-ansible-demo
+NOTE: These instructions assume an Ubuntu 22.04 instance with python3 already installed.
 
+It does not setup a venv, but this is generally a best practice.
+
+You may need to make minor modifications to install some dependencies.
 ## Download this repo
 ```
 cd ~
@@ -51,8 +55,7 @@ We will run the ansible manager directly on the system and we will run the web a
 * Setup the ansible-manager environment
 ```
 cd ~/o11y-ansible-demo/ansible-manager
-python3 -m venv venv
-source venv/bin/activate
+pip install -r requirements.txt
 ```
 * Build the apps
 ```
