@@ -89,3 +89,8 @@ sudo k3s ctr images import sampleapp-v2.tar
 cd ~/o11y-ansible-demo
 kubectl apply -f v1.yml
 ```
+
+## Start the ansible manager
+```
+flask run --host=0.0.0.0 --port=81
+```

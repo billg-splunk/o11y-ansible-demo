@@ -14,6 +14,15 @@ def root():
   #return render_template('index.html')
   return 'Hi'
 
+@app.route('/deploy', methods=['GET'])
+def deploy():
+  ver = request.args['v']
+  if len(ver) > 0:
+    subprocess.run('ansible-playbook',f'playbook_v{ver}.yaml')
+  #print(request.method)
+  #return render_template('index.html')
+  return 'Running deploy'
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
 
