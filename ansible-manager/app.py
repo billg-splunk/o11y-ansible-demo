@@ -19,7 +19,7 @@ def deploy():
   ver = request.args['v']
   global rootDirectory
   playbookFile = f'playbook_v{ver}.yaml'
-  playbook = os.path.join(rootDirectory, '..', playbookFile)
+  playbook = os.path.join(rootDirectory, playbookFile)
   subprocess.run(['ansible-playbook',playbook])
   msg = f'Running deploy for v{ver}...'
   return msg
