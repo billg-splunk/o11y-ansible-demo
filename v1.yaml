@@ -28,7 +28,7 @@ metadata:
   name: sampleapp-service
 spec:
   ports:
-  - port: 8081
+  - port: 81
     protocol: TCP
     targetPort: 5000
   selector:
