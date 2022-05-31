@@ -29,12 +29,16 @@ ansible all -m ping
     "ping": "pong"
 }
 ```
-
+* Add kubernetes plugin
+```
+ansible-galaxy collection install kubernetes.core
+```
 ## Install k3s and Docker
 * Install k3s
 ```
 curl -sfL https://get.k3s.io | sh -
 sudo chmod 755 /etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 ```
 * Install docker
 ```
@@ -52,7 +56,7 @@ newgrp docker
 ```
 ## Install the Apps
 We will run the ansible manager directly on the system and we will run the web app using k3s. An Ansible playbook will toggle the version of the app.
-* Install python3 and pip
+* Install python3, pip, and dependencies
 ```
 sudo apt install -y python3 python3-pip
 ```

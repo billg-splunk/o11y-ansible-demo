@@ -1,0 +1,10 @@
+- name: Deploy v2 of app
+  connection: ansible.netcommon.network_cli
+  gather_facts: false
+  hosts: all
+  tasks:
+  - name: Switch to v2.
+    kubernetes.core.k8s:
+      state: present
+      namespace: default
+      src: /home/ubuntu/o11y-ansible-demo/v2.yaml
