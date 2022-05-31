@@ -1,4 +1,4 @@
-- name: Deploy v2 of app
+- name: Deploy v1 of app
   connection: ansible.netcommon.network_cli
   gather_facts: false
   hosts: all
