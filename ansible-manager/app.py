@@ -18,7 +18,7 @@ def root():
 def deploy():
   ver = request.args['v']
   if len(ver) > 0:
-    subprocess.run('ansible-playbook',f'playbook_v{ver}.yaml')
+    subprocess.run(['ansible-playbook',f'playbook_v{ver}.yaml'])
   #print(request.method)
   #return render_template('index.html')
   return 'Running deploy'
