@@ -17,11 +17,12 @@ def root():
 @app.route('/deploy', methods=['GET'])
 def deploy():
   ver = request.args['v']
-  if len(ver) > 0:
-    subprocess.run(['ansible-playbook',f'playbook_v{ver}.yaml'])
-  #print(request.method)
-  #return render_template('index.html')
-  return 'Running deploy'
+  global rootDirectory
+  playbookFile = f'playbook_v{ver}.yaml'
+  playbook = os.path.join(rootDirectory, '..', playbookFile)
+  subprocess.run(['ansible-playbook',playbook])
+  msg = f'Running deploy for v{ver}...'
+  return msg
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=81)
