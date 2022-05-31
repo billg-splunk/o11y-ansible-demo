@@ -93,5 +93,5 @@ kubectl apply -f v1.yml
 ## Start the ansible manager
 ```
 cd ~/o11y-ansible-demo/ansible-manager
-sudo flask run --host=0.0.0.0 --port=8081
+flask run --host=0.0.0.0 --port=8081
 ```
