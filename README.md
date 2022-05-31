@@ -63,7 +63,7 @@ sudo apt install -y python3 python3-pip
 * Setup the ansible-manager environment
 ```
 cd ~/o11y-ansible-demo/ansible-manager
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
 ```
 * Build the apps
 ```
